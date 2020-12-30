@@ -8,3 +8,15 @@ and open the template in the editor.
     Author     : isaacrez
 */
 
+h3, input {
+    font-family: 'Courier New', monospace;
+    font-weight: bold
+}
+
+h3 {
+    font-size: 16pt;
+}
+
+.bold {
+    font-weight: bold;
+}
