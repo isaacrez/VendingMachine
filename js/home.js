@@ -1,4 +1,6 @@
 
+var currCash = 0;
+
 $(document).ready(function() {
     $.ajax({
         type: 'GET',
@@ -18,9 +20,18 @@ function addVendable(index, data) {
             entry += '<div class="w-100"><b>' + data.name + '</b></div>';
         entry += '</div>';
         entry += '<div class="card-body py-2">';
-            entry += '<p>$' + data.price + '</p>';
+            entry += '<p>' + getCashString(data.price) + '</p>';
             entry += '<p>Quantity: ' + data.quantity + '</p>';
         entry += '</div>';
     entry += '</div>';
     $('#vendingDisplay').append(entry);
+}
+
+function addCash(amt) {
+    currCash += amt;
+    $('#cashTotal').text(getCashString(currCash));
+}
+
+function getCashString(money) {
+    return '$' + String(money.toFixed(2));
 }
