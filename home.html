@@ -36,12 +36,12 @@ and open the template in the editor.
                     <div class="d-flex justify-content-around w-100 mb-1">
                         <button type="button"
                                 class="btn btn-primary w-50 mx-1"
-                                onclick="addCash(1)">
+                                onclick="addCents(100)">
                             Add Dollar
                         </button>
                         <button type="button"
                                 class="btn btn-primary w-50 mx-1"
-                                onclick="addCash(0.25)">
+                                onclick="addCents(25)">
                             Add Quarter
                         </button>
                     </div>
@@ -49,12 +49,12 @@ and open the template in the editor.
                     <div class="d-flex justify-content-around w-100 mb-3">
                         <button type="button"
                                 class="btn btn-primary w-50 mx-1"
-                                onclick="addCash(0.10)">
+                                onclick="addCents(10)">
                             Add Dime
                         </button>
                         <button type="button"
                                 class="btn btn-primary w-50 mx-1"
-                                onclick="addCash(0.05)">
+                                onclick="addCents(5)">
                             Add Nickel
                         </button>
                     </div>
@@ -93,14 +93,15 @@ and open the template in the editor.
                         </div>
                         <div class="card-body p-0">
                             <div class="bg-secondary py-1">
-                                <h3 id="errorMessage">Heh</h3>
+                                <h3 id="changeMessage"></h3>
                             </div>
                         </div>
                     </div>
                     
                     <button type="button"
                             class="btn btn-danger w-75"
-                            style="font-size: 16pt;">
+                            style="font-size: 16pt;"
+                            onclick="getChange()">
                         RETURN CHANGE
                     </button>
                 </div>

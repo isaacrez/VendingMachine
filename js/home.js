@@ -1,5 +1,5 @@
 
-var currCash = 0;
+var currCents = 0;
 
 $(document).ready(function() {
     $.ajax({
@@ -27,8 +27,35 @@ function addVendable(index, data) {
     $('#vendingDisplay').append(entry);
 }
 
-function addCash(amt) {
-    currCash += amt;
+function addCents(amt) {
+    currCents += amt;
+    $('#cashTotal').text(getCashString(currCents / 100));
+}
+
+function getChange() {
+    var coinValue = {
+        'Dollar': 100,
+        'Quarter': 25,
+        'Dime': 10,
+        'Nickel': 5
+    };
+    var refund = [];
+    
+    for (var coin in coinValue) {
+        var amt = Math.floor(currCents / coinValue[coin]);
+        currCents = currCents % coinValue[coin];
+        
+        if (amt > 1) {
+            refund.push(coin + 's: ' + amt);
+        } else if (amt > 0) {
+            refund.push(coin + ': ' + amt);
+        }
+    }
+    
+    var output = refund.length === 0 ? 'No change!' : refund.join(', ');
+    $('#changeMessage').text(output);
+    
+    currCash = 0;
     $('#cashTotal').text(getCashString(currCash));
 }
 
