@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Vending Machine</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    </head>
+    <body class="bg-dark">
+        <div class="container my-3 p-3 bg-light">
+            <h1 class="text-center">Vending Machine</h1>
+            
+            <hr>
+            
+            <div class="row">
+                <div class="col d-flex flex-wrap justify-content-between align-content-start">
+                    <div class="card text-center mb-3">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="px-1">#1</div>
+                            <div class="px-1">Snickers</div>
+                        </div>
+                        <div class="card-body py-2">
+                            <p>$1.85</p>
+                            <p>Quantity: 3</p>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="col d-flex flex-column align-items-center p-3">
+                    
+                    <div class="card w-100 mb-3
+                                text-center text-white
+                                border-dark border-2">
+                        <div class="card-header pb-0 bg-dark">
+                            <h2>Total $ In</h2>
+                        </div>
+                        <div class="card-body bg-secondary py-1">
+                            <h3 id="cashTotal">$2.00</h3>
+                        </div>
+                    </div>
+
+                    <div class="card w-100 mb-3
+                                text-center text-white
+                                border-dark border-2">
+                        <div class="card-header pb-0 bg-dark">
+                            <h2>Messages</h2>
+                        </div>
+                        <div class="card-body p-0 bg-secondary">
+                            <h3 id="errorMessage">Heh</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex w-100 justify-content-between mb-2
+                                border border-dark border-2 rounded
+                                bg-dark text-white">
+                        <h3 class="mx-3 my-1">Item:</h3>
+                        <div class="w-75 bg-secondary text-center">
+                            <h3 class=" my-1">Meh</h3>
+                        </div>
+                    </div>
+                    
+                    <button type="button"
+                            class="btn btn-success w-50 mb-3"
+                            style="font-size: 16pt;">
+                        BUY
+                    </button>
+
+                    <div class="card w-100 mb-2
+                                border border-dark border-2 rounded
+                                text-center text-white">
+                        <div class="card-header bg-dark pb-0">
+                            <h2>Change</h2>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="bg-secondary py-1">
+                                <h3 id="errorMessage">Heh</h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="button"
+                            class="btn btn-danger w-50"
+                            style="font-size: 16pt;">
+                        RETURN CHANGE
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <script src="js/home.js"></script>
+    </body>
+</html>
