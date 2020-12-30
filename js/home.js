@@ -36,9 +36,16 @@ function buyVendable() {
     $.ajax({
         type: 'POST',
         url: 'http://tsg-vending.herokuapp.com/money/' + currCents / 100  + '/item/' + $('#itemId').val(),
+        
         success: function(change) {
             displayChange(change);
+            loadVendables();
+            currCents = 0;
             $('#infoMessages').text('Thank You!!!');
+        },
+        
+        error: function(xhr) {
+            $('#infoMessages').text(xhr.responseJSON.message);
         }
     })
 }
@@ -79,9 +86,9 @@ function displayChange(change) {
     var refund = [];
     for (var coin in change) {
         if (change[coin] > 1) {
-            refund.push(coin.capitalize() + ': ' + change[coin]);
+            refund.push(getCapitalized(coin) + ': ' + change[coin]);
         } else if (change[coin] > 0) {
-            refund.push(pluralToSingular[coin].capitalize() + ': ' + change[coin]);
+            refund.push(getCapitalized(pluralToSingular[coin]) + ': ' + change[coin]);
         }
     }
     
@@ -91,6 +98,10 @@ function displayChange(change) {
     currCash = 0;
     $('#cashTotal').text(getCashString(currCash));
     
+}
+
+function getCapitalized(str) {
+    return str.replace(/^\w/, (c) => c.toUpperCase());
 }
 
 function getCashString(money) {
