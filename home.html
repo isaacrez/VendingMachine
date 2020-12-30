@@ -66,7 +66,7 @@ and open the template in the editor.
                             <h2>Messages</h2>
                         </div>
                         <div class="card-body p-0 bg-secondary">
-                            <h3 id="errorMessage">Heh</h3>
+                            <h3 id="infoMessages">Welcome!</h3>
                         </div>
                     </div>
                     
@@ -74,14 +74,17 @@ and open the template in the editor.
                                 border border-dark border-2 rounded
                                 bg-dark text-white">
                         <h3 class="mx-3 my-1">Item:</h3>
-                        <div class="w-75 bg-secondary text-center">
-                            <h3 class=" my-1">Meh</h3>
-                        </div>
+                        <input id="itemId"
+                               type="number"
+                               min="0"
+                               class="w-75 bg-secondary text-white rounded m-1"
+                               style="font-size:14pt;">
                     </div>
                     
                     <button type="button"
                             class="btn btn-success w-75 mb-3"
-                            style="font-size: 16pt;">
+                            style="font-size: 16pt;"
+                            onclick="buyVendable()">
                         BUY
                     </button>
 
@@ -93,7 +96,7 @@ and open the template in the editor.
                         </div>
                         <div class="card-body p-0">
                             <div class="bg-secondary py-1">
-                                <h3 id="changeMessage"></h3>
+                                <h3 id="changeMessage">None</h3>
                             </div>
                         </div>
                     </div>
@@ -102,7 +105,7 @@ and open the template in the editor.
                             class="btn btn-danger w-75"
                             style="font-size: 16pt;"
                             onclick="getChange()">
-                        RETURN CHANGE
+                        GET CHANGE
                     </button>
                 </div>
             </div>
